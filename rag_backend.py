@@ -51,7 +51,7 @@ def chat_with_docs(request: QueryRequest):
         
         # Updated to active production model endpoint
         response = client.models.generate_content(
-            model='gemini-3.5-flash',
+            model='gemini-3.8-flash',
             contents=f"Context:\n{context}\n\nQuestion: {request.question}"
         )
         return {"answer": response.text}
