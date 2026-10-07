@@ -49,9 +49,9 @@ def chat_with_docs(request: QueryRequest):
         if document_chunks:
             context = "\n\n".join(document_chunks)
         
-        # Using the current stable model endpoint
+        # Updated to active production model endpoint
         response = client.models.generate_content(
-            model='gemini-3.5-flash',
+            model='gemini-2.0-flash',
             contents=f"Context:\n{context}\n\nQuestion: {request.question}"
         )
         return {"answer": response.text}
